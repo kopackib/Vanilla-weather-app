@@ -21,18 +21,27 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <h1>Brisbane</h1>
-        <ul>
-          <li>Wednesday 5:00</li>
-          <li>Clear</li>
-        </ul>
+        <div class="overview">
+          <h1>Brisbane</h1>
+          <ul>
+            <li>Wednesday 5:00</li>
+            <li>Clear</li>
+          </ul>
+        </div>
         <div class="row">
           <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Clear"
-            />
-            24 ℃ | ℉
+            <div class="clearfix weather-temperature">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="Clear"
+                id="icon"
+                class="float-left"
+              />
+              <div class="float-left">
+                <strong id="temperature">24</strong>
+                <span class="units"> ℃ | ℉</span>
+              </div>
+            </div>
           </div>
           <div class="col-6">
             <ul>
@@ -42,15 +51,17 @@
             </ul>
           </div>
         </div>
-        <small>
-          <a
-            href="https://github.com/kopackib/Vanilla-weather-app"
-            target="_blank"
-            >Open-source code</a
-          >
-          , by Brittney Kopacki
-        </small>
       </div>
+    </div>
+    <div class="weather-app-wrap">
+      <small>
+        <a
+          href="https://github.com/kopackib/Vanilla-weather-app"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Brittney Kopacki
+      </small>
     </div>
     <script src="src/script.js"></script>
   </body>
