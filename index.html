@@ -16,16 +16,33 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="Search" class="btn btn-secondary" />
+            </div>
+          </div>
+        </form>
         <div class="overview">
-          <h1>Brisbane</h1>
+          <h1 id="city"></h1>
           <ul>
             <li>Wednesday 5:00</li>
-            <li>Clear</li>
+            <li id="description"></li>
           </ul>
         </div>
         <div class="row">
@@ -38,16 +55,15 @@
                 class="float-left"
               />
               <div class="float-left">
-                <strong id="temperature">24</strong>
+                <strong id="temperature"></strong>
                 <span class="units"> ℃ | ℉</span>
               </div>
             </div>
           </div>
           <div class="col-6">
             <ul>
-              <li>Precipitation: 1%</li>
-              <li>Humidity: 33%</li>
-              <li>Wind: 10 km/h</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
         </div>
